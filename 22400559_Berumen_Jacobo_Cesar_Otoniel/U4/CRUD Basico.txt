@@ -1,0 +1,66 @@
+Crear una película
+Descripción: Crear una nueva película.
+Método HTTP: POST
+URI: /peliculas
+JSON enviado:
+{
+  "titulo": "Creed",
+  "año": 2010,
+  "director": "Christopher Nolan",
+  "duracion": 148
+}
+JSON recibido:
+{
+  "mensaje": "Película creada correctamente",
+  "pelicula": {
+    "id": 1,
+    "titulo": "Creed",
+    "año": 2010,
+    "director": "Christopher Nolan",
+    "duracion": 148
+  }
+}
+Consultar una película por ID
+Descripción: Obtener la información de una película por id.
+Método HTTP: GET
+URI: /peliculas/1
+JSON enviado: buscando
+JSON recibido:
+{
+  "id": 1,
+  "titulo": "Creed",
+  "año": 2010,
+  "director": "Christopher Nolan",
+  "duracion": 148
+}
+🔹 Actualizar película por ID
+Descripción: Actualizar año, director y duración de una película.
+Método HTTP: PUT
+URI: /peliculas/1
+JSON enviado:
+{
+  "año": 2012,
+  "director": "Ryan Coogler",
+  "duracion": 170
+}
+JSON recibido:
+{
+  "mensaje": "Película actualizada correctamente",
+  "pelicula": {
+    "id": 1,
+    "titulo": "Creed",
+    "año": 2012,
+    "director": "Ryan Coogler",
+    "duracion": 170
+  }
+}
+
+Eliminar una película por ID
+Descripción: Eliminar una película de la base de datos.
+Método HTTP: DELETE
+URI: /peliculas/1
+JSON enviado: (No aplica)
+JSON recibido:
+{
+  "mensaje": "Película eliminada correctamente"
+}
