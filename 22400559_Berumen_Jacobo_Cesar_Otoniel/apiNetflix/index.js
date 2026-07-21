@@ -8,16 +8,29 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-// 1. Definir el Schema y Modelo de Pelicula
 const peliculaSchema = new mongoose.Schema({
     titulo: String,
-    director: String,
-    anio: Number
-}, { collection: 'peliculas' }); // opcional: asegura el nombre exacto de la colección
+    genero: String,
+    'año': Number,
+    duracion: Number,
+    idioma: String,
+    calificacion: Number
+}, { collection: 'peliculas' }); 
 
 const Pelicula = mongoose.model("Pelicula", peliculaSchema);
 
-// 2. Conexión a la BD
+const seriesSchema = new mongoose.Schema({
+    titulo: String,
+    genero: String,
+    'año': Number,
+    temporada: Number,
+    episodios: Number,
+    idioma: String,
+    calificacion: String
+}, { collection: 'series' });
+    
+const Serie = mongoose.model("Serie", seriesSchema);
+
 mongoose.connect("mongodb+srv://grupo:grupo@servidorprueba.ygegryf.mongodb.net/netflix")
     .then(() => {
         console.log("conectado correctamente a MongoDB");
@@ -25,8 +38,6 @@ mongoose.connect("mongodb+srv://grupo:grupo@servidorprueba.ygegryf.mongodb.net/n
     .catch((error) => {
         console.error("error al conectar con MongoDB", error);
     });
-
-// Rutas
 app.get("/pagina", (req, res) => {
     res.send(`
         <h1>mi página web</h1>
