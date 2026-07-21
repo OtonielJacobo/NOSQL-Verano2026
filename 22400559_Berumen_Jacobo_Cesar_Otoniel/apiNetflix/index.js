@@ -61,5 +61,20 @@ app.get("/peliculas", async (req, res) => {
         });
     }
 });
-
+app.get("/series", async (req, res) => {
+    try {
+        const series = await Serie.find();
+        if (!series || series.length === 0) {
+            return res.status(404).json({
+                mensaje: "series no encontradas"
+            });
+        }
+        res.json(series);
+    } catch (error) {
+        res.status(500).json({
+            mensaje: "error al recuperar series",
+            error: error.message
+        });
+    }
+});
 module.exports = app;
