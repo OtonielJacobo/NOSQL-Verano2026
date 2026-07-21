@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "API de peliculas y Series"
+    "nodemon": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "mongoose": "^9.8.0",
-    "morgan": "^1.11.0"
+    "morgan": "^1.11.0",
+    "nodemon": "^3.1.14"
   }
 }
