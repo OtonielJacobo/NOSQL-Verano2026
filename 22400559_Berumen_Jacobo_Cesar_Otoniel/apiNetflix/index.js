@@ -7,7 +7,9 @@ const mongoose = require("mongoose");
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-
+app.use(cors({
+  origin: "*"
+}));
 const peliculaSchema = new mongoose.Schema({
     titulo: String,
     genero: String,
@@ -77,4 +79,5 @@ app.get("/series", async (req, res) => {
         });
     }
 });
+
 module.exports = app;
