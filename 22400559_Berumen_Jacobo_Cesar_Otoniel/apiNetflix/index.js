@@ -29,7 +29,7 @@ const seriesSchema = new mongoose.Schema({
     calificacion: String
 }, { collection: 'series' });
     
-const Serie = mongoose.model("Serie", seriesSchema);
+const Serie = mongoose.model("series", seriesSchema);
 
 mongoose.connect("mongodb+srv://grupo:grupo@servidorprueba.ygegryf.mongodb.net/netflix")
     .then(() => {
