@@ -15,3 +15,4 @@ app.get("/pagina", (req, res) => {
         `)
 })
 mongoose.connect("mongodb+srv://grupo:grupo@servidorprueba.ygegryf.mongodb.net/netflix");
+module.exports = app;
