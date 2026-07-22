@@ -11,8 +11,18 @@ const btnConsultar = document.getElementById("btnConsultar");
 const listaPeliculas = document.getElementById("listaPeliculas");
 const totalPeliculasEl = document.getElementById("totalPeliculas");
 const totalGenerosEl = document.getElementById("totalGeneros");
+const notificacion = document.getElementById("notificacion");
 
 let allMovies = [];
+
+function mostrarNotificacion(mensaje) {
+    notificacion.textContent = mensaje;
+    notificacion.classList.add("visible");
+    
+    setTimeout(() => {
+        notificacion.classList.remove("visible");
+    }, 4000);
+}
 
 // Guardar película
 formulario.addEventListener("submit", async (e) => {
@@ -32,13 +42,13 @@ formulario.addEventListener("submit", async (e) => {
 
         const respuesta = await agregarPelicula(pelicula);
 
-        alert(respuesta.mensaje);
+        mostrarNotificacion("✅ " + respuesta.mensaje);
 
         formulario.reset();
 
     } catch (error) {
 
-        alert(error.message);
+        mostrarNotificacion("❌ Error: " + error.message);
 
     }
 
@@ -81,7 +91,7 @@ btnConsultar.addEventListener("click", async () => {
 
     } catch (error) {
 
-        alert(error.message);
+        mostrarNotificacion("❌ Error: " + error.message);
 
     }
 
