@@ -14,7 +14,6 @@ async function obtenerPeliculas() {
 
 }
 
-// Agregar película
 async function agregarPelicula(pelicula) {
 
     const respuesta = await fetch(`${API_URL}/peliculas`, {

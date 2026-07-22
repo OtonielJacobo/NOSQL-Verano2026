@@ -80,4 +80,17 @@ app.get("/series", async (req, res) => {
     }
 });
 
+app.post("/peliculas", async (req, res) => {
+    try {
+        const nuevaPelicula = new Pelicula(req.body);
+        const peliculaGuardada = await nuevaPelicula.save();
+        res.status(201).json(peliculaGuardada);
+    } catch (error) {
+        res.status(500).json({
+            mensaje: "error al crear la película",
+            error: error.message
+        });
+    }
+});
+
 module.exports = app;
