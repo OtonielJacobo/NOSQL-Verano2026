@@ -10,6 +10,7 @@ app.use(morgan("dev"));
 app.use(cors({
   origin: "*"
 }));
+app.use(express.static(__dirname));
 const peliculaSchema = new mongoose.Schema({
     titulo: String,
     genero: String,
