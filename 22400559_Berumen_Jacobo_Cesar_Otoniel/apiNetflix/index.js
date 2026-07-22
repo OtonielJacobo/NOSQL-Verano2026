@@ -63,6 +63,7 @@ app.get("/peliculas", async (req, res) => {
         });
     }
 });
+
 app.get("/series", async (req, res) => {
     try {
         const series = await Serie.find();

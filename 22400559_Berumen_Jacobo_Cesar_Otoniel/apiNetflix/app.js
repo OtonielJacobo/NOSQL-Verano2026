@@ -42,13 +42,13 @@ formulario.addEventListener("submit", async (e) => {
 
         const respuesta = await agregarPelicula(pelicula);
 
-        mostrarNotificacion("✅ " + respuesta.mensaje);
+        mostrarNotificacion("Película guardada correctamente");
 
         formulario.reset();
 
     } catch (error) {
 
-        mostrarNotificacion("❌ Error: " + error.message);
+        mostrarNotificacion("Error: " + error.message);
 
     }
 
@@ -91,7 +91,7 @@ btnConsultar.addEventListener("click", async () => {
 
     } catch (error) {
 
-        mostrarNotificacion("❌ Error: " + error.message);
+        mostrarNotificacion("Error: " + error.message);
 
     }
 

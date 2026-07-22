@@ -1,5 +1,5 @@
 
-const API_URL = "https://nosql-verano2026.vercel.app";
+const API_URL = "https://nosql-verano2026.vercel.app/api";
 
 // Obtener películas
 async function obtenerPeliculas() {
